@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Support - Ticketing System</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="filter-section">
+          <h3>Status</h3>
+          <div class="filter-group">
+            <div class="filter-item active">
+              <input type="checkbox" id="filter-open" checked />
+              <label for="filter-open" style="flex: 1; cursor: pointer"
+                >Open</label
+              >
+              <span class="filter-badge">12</span>
+            </div>
+            <div class="filter-item">
+              <input type="checkbox" id="filter-pending" />
+              <label for="filter-pending" style="flex: 1; cursor: pointer"
+                >Pending</label
+              >
+              <span class="filter-badge">8</span>
+            </div>
+            <div class="filter-item">
+              <input type="checkbox" id="filter-resolved" />
+              <label for="filter-resolved" style="flex: 1; cursor: pointer"
+                >Resolved</label
+              >
+              <span class="filter-badge">24</span>
+            </div>
+            <div class="filter-item">
+              <input type="checkbox" id="filter-closed" />
+              <label for="filter-closed" style="flex: 1; cursor: pointer"
+                >Closed</label
+              >
+              <span class="filter-badge">156</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <h3>Priority</h3>
+          <div class="filter-group">
+            <div class="filter-item">
+              <input type="checkbox" id="filter-urgent" />
+              <label for="filter-urgent" style="flex: 1; cursor: pointer"
+                >Urgent</label
+              >
+              <span class="filter-badge">3</span>
+            </div>
+            <div class="filter-item">
+              <input type="checkbox" id="filter-high" />
+              <label for="filter-high" style="flex: 1; cursor: pointer"
+                >High</label
+              >
+              <span class="filter-badge">7</span>
+            </div>
+            <div class="filter-item">
+              <input type="checkbox" id="filter-medium" />
+              <label for="filter-medium" style="flex: 1; cursor: pointer"
+                >Medium</label
+              >
+              <span class="filter-badge">15</span>
+            </div>
+            <div class="filter-item">
+              <input type="checkbox" id="filter-low" />
+              <label for="filter-low" style="flex: 1; cursor: pointer"
+                >Low</label
+              >
+              <span class="filter-badge">19</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <h3>Assigned To</h3>
+          <div class="filter-group">
+            <div class="filter-item">
+              <input type="checkbox" id="filter-me" />
+              <label for="filter-me" style="flex: 1; cursor: pointer">Me</label>
+              <span class="filter-badge">5</span>
+            </div>
+            <div class="filter-item">
+              <input type="checkbox" id="filter-team" />
+              <label for="filter-team" style="flex: 1; cursor: pointer"
+                >Team</label
+              >
+              <span class="filter-badge">8</span>
+            </div>
+            <div class="filter-item">
+              <input type="checkbox" id="filter-unassigned" />
+              <label for="filter-unassigned" style="flex: 1; cursor: pointer"
+                >Unassigned</label
+              >
+              <span class="filter-badge">6</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <div class="main-content">
+        <!-- TOP BAR -->
+        <div class="top-bar">
+          <div class="search-box">
+            <span>🔍</span>
+            <input type="text" placeholder="Search tickets..." />
+          </div>
+          <div class="sort-control">
+            <span>Sort by:</span>
+            <select
+              style="
+                background-color: var(--bg-tertiary);
+                border: 1px solid var(--border-color);
+                border-radius: 4px;
+                padding: 6px 8px;
+                color: var(--text-primary);
+                cursor: pointer;
+                font-size: 13px;
+              "
+            >
+              <option>Recent</option>
+              <option>Priority</option>
+              <option>Oldest</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- CONTENT AREA -->
+        <div class="content-area">
+          <!-- TICKET LIST -->
+          <div class="ticket-list">
+            <!-- Ticket 1 - Selected -->
+            <div class="ticket-item selected">
+              <div class="ticket-header">
+                <div>
+                  <div class="ticket-id">TKT-2847</div>
+                  <div class="ticket-subject">Payment processing failed</div>
+                </div>
+                <div class="ticket-meta">
+                  <span class="priority-badge priority-urgent">Urgent</span>
+                  <span class="status-badge open">Open</span>
+                </div>
+              </div>
+              <div class="ticket-footer">
+                <div class="customer-info">
+                  <div class="avatar">AC</div>
+                  <span>Alex Chen</span>
+                </div>
+                <span>2 hours ago</span>
+              </div>
+            </div>
+
+            <!-- Ticket 2 -->
+            <div class="ticket-item">
+              <div class="ticket-header">
+                <div>
+                  <div class="ticket-id">TKT-2846</div>
+                  <div class="ticket-subject">Login issues on mobile app</div>
+                </div>
+                <div class="ticket-meta">
+                  <span class="priority-badge priority-high">High</span>
+                  <span class="status-badge pending">Pending</span>
+                </div>
+              </div>
+              <div class="ticket-footer">
+                <div class="customer-info">
+                  <div
+                    class="avatar"
+                    style="
+                      background: linear-gradient(135deg, #f97316, #fbbf24);
+                    "
+                  >
+                    MJ
+                  </div>
+                  <span>Maria Johnson</span>
+                </div>
+                <span>4 hours ago</span>
+              </div>
+            </div>
+
+            <!-- Ticket 3 -->
+            <div class="ticket-item">
+              <div class="ticket-header">
+                <div>
+                  <div class="ticket-id">TKT-2845</div>
+                  <div class="ticket-subject">
+                    Account verification email not received
+                  </div>
+                </div>
+                <div class="ticket-meta">
+                  <span class="priority-badge priority-medium">Medium</span>
+                  <span class="status-badge open">Open</span>
+                </div>
+              </div>
+              <div class="ticket-footer">
+                <div class="customer-info">
+                  <div
+                    class="avatar"
+                    style="
+                      background: linear-gradient(135deg, #22c55e, #84cc16);
+                    "
+                  >
+                    RP
+                  </div>
+                  <span>Rajesh Patel</span>
+                </div>
+                <span>6 hours ago</span>
+              </div>
+            </div>
+
+            <!-- Ticket 4 -->
+            <div class="ticket-item">
+              <div class="ticket-header">
+                <div>
+                  <div class="ticket-id">TKT-2844</div>
+                  <div class="ticket-subject">
+                    Refund request for order #54382
+                  </div>
+                </div>
+                <div class="ticket-meta">
+                  <span class="priority-badge priority-high">High</span>
+                  <span class="status-badge resolved">Resolved</span>
+                </div>
+              </div>
+              <div class="ticket-footer">
+                <div class="customer-info">
+                  <div
+                    class="avatar"
+                    style="
+                      background: linear-gradient(135deg, #06b6d4, #0ea5e9);
+                    "
+                  >
+                    SF
+                  </div>
+                  <span>Sarah Freeman</span>
+                </div>
+                <span>1 day ago</span>
+              </div>
+            </div>
+
+            <!-- Ticket 5 -->
+            <div class="ticket-item">
+              <div class="ticket-header">
+                <div>
+                  <div class="ticket-id">TKT-2843</div>
+                  <div class="ticket-subject">
+                    How to export transaction history?
+                  </div>
+                </div>
+                <div class="ticket-meta">
+                  <span class="priority-badge priority-low">Low</span>
+                  <span class="status-badge open">Open</span>
+                </div>
+              </div>
+              <div class="ticket-footer">
+                <div class="customer-info">
+                  <div
+                    class="avatar"
+                    style="
+                      background: linear-gradient(135deg, #a855f7, #d946ef);
+                    "
+                  >
+                    ER
+                  </div>
+                  <span>Emma Rodriguez</span>
+                </div>
+                <span>1 day ago</span>
+              </div>
+            </div>
+
+            <!-- Ticket 6 -->
+            <div class="ticket-item">
+              <div class="ticket-header">
+                <div>
+                  <div class="ticket-id">TKT-2842</div>
+                  <div class="ticket-subject">2FA setup not working</div>
+                </div>
+                <div class="ticket-meta">
+                  <span class="priority-badge priority-high">High</span>
+                  <span class="status-badge closed">Closed</span>
+                </div>
+              </div>
+              <div class="ticket-footer">
+                <div class="customer-info">
+                  <div
+                    class="avatar"
+                    style="
+                      background: linear-gradient(135deg, #ef4444, #dc2626);
+                    "
+                  >
+                    DK
+                  </div>
+                  <span>David Kim</span>
+                </div>
+                <span>2 days ago</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PREVIEW PANEL -->
+          <div class="preview-panel">
+            <div class="preview-header">
+              <div class="preview-title-section">
+                <h2>TKT-2847</h2>
+                <p>Payment processing failed</p>
+              </div>
+              <div class="preview-actions">
+                <button class="icon-btn" title="Archive">📋</button>
+                <button class="icon-btn" title="More options">⋮</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="detail-row">
+                <div class="detail-label">Status</div>
+                <div class="detail-value">
+                  <span class="status-badge open">Open</span>
+                </div>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Priority</div>
+                <div class="detail-value">
+                  <span class="priority-badge priority-urgent">Urgent</span>
+                </div>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Assigned</div>
+                <div class="detail-value">You</div>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Customer</div>
+                <div class="detail-value">Alex Chen (alex.chen@email.com)</div>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Created</div>
+                <div class="detail-value">Nov 19, 2025 at 2:30 PM</div>
+              </div>
+              <div class="detail-row">
+                <div class="detail-label">Updated</div>
+                <div class="detail-value">2 hours ago</div>
+              </div>
+            </div>
+
+            <div class="conversation">
+              <div class="conversation-title">Conversation History</div>
+
+              <div class="message">
+                <div class="message-author">Alex Chen (Customer)</div>
+                <div class="message-text">
+                  Hi, I've been trying to make a purchase but the payment keeps
+                  failing. I've tried 3 different credit cards with the same
+                  error message.
+                </div>
+                <div class="message-time">2 hours ago</div>
+              </div>
+
+              <div class="message support">
+                <div class="message-author">You</div>
+                <div class="message-text">
+                  Thank you for reaching out! I apologize for the inconvenience.
+                  Let me investigate this issue for you right away. Can you
+                  please provide the exact error message you're seeing?
+                </div>
+                <div class="message-time">1 hour 45 minutes ago</div>
+              </div>
+
+              <div class="message">
+                <div class="message-author">Alex Chen (Customer)</div>
+                <div class="message-text">
+                  The error says "Transaction declined - Please contact your
+                  bank" but my bank confirmed the cards are active and have
+                  sufficient funds.
+                </div>
+                <div class="message-time">1 hour 30 minutes ago</div>
+              </div>
+
+              <div class="message support">
+                <div class="message-author">You</div>
+                <div class="message-text">
+                  This typically indicates a temporary gateway issue. I'm
+                  escalating this to our technical team right now. In the
+                  meantime, could you try clearing your browser cache and trying
+                  again on a different browser?
+                </div>
+                <div class="message-time">1 hour ago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
